@@ -10,6 +10,8 @@ const dotenv      = require('dotenv');
 const helmet      = require('helmet');
 
 const User   = require('./models/User');
+const Transaction   = require('./models/Transaction');
+
 const tokens = require('./controller/auth/tokens');
 // =======================
 // Configuration & DB ====
