@@ -5,14 +5,14 @@ var client = require('./User');
 
 var TranactionSchema = new mongoose.Schema({
     
-    description: {type: String},
-    item: {type: String},
-    client: {type: client},
-    value:  {type: Number},
-    date: {type: Date, default: Date.now},
+    description : {type: String},
+    item        : {type: String},
+    client      : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    value       : {type: Number},
+    date        : {type: Date, default: Date.now},
       
-    created_at: {type: Date, default: Date.now},
-    updated_at: {type: Date, default: Date.now},
+    created_at  : {type: Date, default: Date.now},
+    updated_at  : {type: Date, default: Date.now}
     
 });
 
@@ -21,4 +21,4 @@ var TranactionSchema = new mongoose.Schema({
 var Transaction = mongoose.model('Transaction', TranactionSchema);
 
 // Export the User model
-module.exports = User;
+module.exports = Transaction;
